@@ -91,3 +91,9 @@ input:hover {
   border-radius:5px;
   Opacity:0.85;
 }
+
+.error{
+font-size :10px;
+font-color:red;
+color:red;
+}

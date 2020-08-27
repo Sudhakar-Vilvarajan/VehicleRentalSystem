@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="Loginstyle.css" rel="stylesheet">
+
+    <script>
+
+    </script>
 </head>
 
 
@@ -13,9 +17,10 @@
 </div>
 <div class="bodyPanel">
     <div class="user">
+        <form action="userlogin" method="post">
         <br><br>
         <h2>Login - User</h2>
-        <br><br>
+        <br>${message}<br>
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="submit" value="Login">
@@ -23,12 +28,14 @@
         <div class="bottom-container">
             <a href="#" style="color:white" class="btn">Sign up</a>
         </div>
+        </form>
     </div>
 
     <div class="vendor">
+        <form action="vendorlogin" method="post">
         <br><br>
         <h2>Login - Vendor</h2>
-        <br><br>
+        <br>${message1}<br>
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="submit" value="Login">
@@ -36,11 +43,13 @@
         <div class="bottom-container">
             <a href="#" style="color:white" class="btn">Sign up</a>
         </div>
+        </form>
     </div>
     <div class="admin">
+        <form action="adminlogin" method="post">
         <br><br>
         <h2>Login - Admin</h2>
-        <br><br>
+            <br>${message2}<br>
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="submit" value="Login">
@@ -48,6 +57,7 @@
         <div class="bottom-container">
             <a href="#" style="color:white" class="btn">Sign up</a>
         </div>
+        </form>
     </div>
 
 </div>
