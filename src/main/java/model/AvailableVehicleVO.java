@@ -11,6 +11,24 @@ public class AvailableVehicleVO {
     public List<String> Vehiclenumber = new ArrayList<>();
     public List<Date> Leasestartdate = new ArrayList<>();
     public List<Date> Leaseenddate = new ArrayList<>();
+    public List<Integer> Leaseamount = new ArrayList<>();
+    public List<Integer> Rentamount = new ArrayList<>();
+
+    public List<Integer> getLeaseamount() {
+        return Leaseamount;
+    }
+
+    public void setLeaseamount(List<Integer> leaseamount) {
+        Leaseamount = leaseamount;
+    }
+
+    public List<Integer> getRentamount() {
+        return Rentamount;
+    }
+
+    public void setRentamount(List<Integer> rentamount) {
+        Rentamount = rentamount;
+    }
 
     public List<String> getCarModel() {
         return CarModel;

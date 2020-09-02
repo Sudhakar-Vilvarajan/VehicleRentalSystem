@@ -22,15 +22,11 @@ public class UserLoginServlet extends HttpServlet {
         String destpage ="Index.jsp";
         AvailableVehicleVO avo= new AvailableVehicleVO();
         LoginService ls = new LoginService();
-        if(ls.verifylogin(Username,Password,"USER"))
+        if(ls.VerifyLogin(Username,Password,"USER"))
         {
             AvailableVehicleService avs= new AvailableVehicleService();
-            try {
-                avo=avs.AvailableVehicle();
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
+            avo=avs.AvailableVehicle();
+            request.setAttribute("avo",avo);
             destpage = "AvailableVehicle.jsp";
         }
         else

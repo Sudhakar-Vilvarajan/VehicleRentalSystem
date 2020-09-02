@@ -21,7 +21,7 @@ public class VendorLoginServlet extends HttpServlet {
         String Password = request.getParameter("password");
         String destpage ="Index.jsp";
         LoginService ls = new LoginService();
-        if(ls.verifylogin(Username,Password,"VENDOR"))
+        if(ls.VerifyLogin(Username,Password,"VENDOR"))
         {
             destpage = ".jsp";
         }

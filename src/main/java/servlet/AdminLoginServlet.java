@@ -21,7 +21,7 @@ public class AdminLoginServlet extends HttpServlet {
         String Password = request.getParameter("password");
         String destpage ="Index.jsp";
         LoginService ls = new LoginService();
-        if(ls.verifylogin(Username,Password,"ADMIN"))
+        if(ls.VerifyLogin(Username,Password,"ADMIN"))
         {
             destpage = ".jsp";
         }
