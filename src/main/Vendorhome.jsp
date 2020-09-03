@@ -20,7 +20,7 @@ avo=(AvailableVehicleVO)request.getAttribute("avo");%>
 <H3>Available Vehicles</H3>
 Welcome <%=avo.getUsername()%>!!!
 <br>
-  <form action="booknowservlet" method="post">
+  <form action="" method="post">
   <%pageContext.setAttribute("username", avo.getUsername(), PageContext.APPLICATION_SCOPE);%>
   <table border="1" style="width:90% ; margin-left:5%;">
 
@@ -36,7 +36,13 @@ Welcome <%=avo.getUsername()%>!!!
    <% for( int i=0;i<avo.CarCompany.size();i++)
     {%>
   <tr>
-    <td><input type="checkbox" name="selectedcars" value=<%=avo.CarModel.get(i)%> ></td>
+  <%if(avo.Bookingid.get(i)==0)
+  {%>
+    <td><input type="radio" name="selectedcars" value=<%=avo.CarModel.get(i)%>></td>
+    <%}
+    else {%>
+    <td><input type="radio" name="selectedcars" value=<%=avo.CarModel.get(i)%> disabled></td>
+    <%}%>
     <td><%=avo.CarCompany.get(i)%></td>
     <td><%=avo.CarModel.get(i)%></td>
     <td><%=avo.Vehiclenumber.get(i)%></td>
@@ -45,8 +51,10 @@ Welcome <%=avo.getUsername()%>!!!
   </tr>
   <%}%>
 </table>
-<input type="submit" value="Book Now">
+<input type="submit" value="Add New">
+<input type="submit" value="Delete" onclick="form.action='DeleteVehicleServlet';">
 </form>
+<%pageContext.setAttribute("username", avo.getUsername(), PageContext.APPLICATION_SCOPE);%>
 </div>
 </body>
 </html>

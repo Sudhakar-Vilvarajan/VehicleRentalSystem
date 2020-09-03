@@ -14,6 +14,24 @@ public class AvailableVehicleVO {
     public List<Integer> Leaseamount = new ArrayList<>();
     public List<Integer> Rentamount = new ArrayList<>();
     public String Username;
+    public List<Integer> Bookingid = new ArrayList<>();
+    public List<String> Vendorname = new ArrayList<>();
+
+    public List<Integer> getBookingid() {
+        return Bookingid;
+    }
+
+    public void setBookingid(List<Integer> bookingid) {
+        Bookingid = bookingid;
+    }
+
+    public List<String> getVendorname() {
+        return Vendorname;
+    }
+
+    public void setVendorname(List<String> vendorname) {
+        Vendorname = vendorname;
+    }
 
     public String getUsername() {
         return Username;

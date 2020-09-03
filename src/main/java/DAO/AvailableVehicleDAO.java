@@ -9,6 +9,7 @@ public class AvailableVehicleDAO {
     public AvailableVehicleVO runquery(String query) {
         AvailableVehicleVO avo = new AvailableVehicleVO();
         try {
+            System.out.println(query);
             ResultSet rs;
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(
@@ -23,6 +24,8 @@ public class AvailableVehicleDAO {
                 avo.Leaseenddate.add(rs.getDate("LeaseEndDate"));
                 avo.Leaseamount.add(rs.getInt("LeaseAmount"));
                 avo.Rentamount.add(rs.getInt("RentPerDay"));
+                avo.Bookingid.add(rs.getInt("BookingId"));
+                avo.Vendorname.add(rs.getString("Vendorname"));
             }
             con.close();
         } catch (Exception e) {

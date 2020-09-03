@@ -1,7 +1,9 @@
 package servlet;
 
 import model.AvailableVehicleVO;
+import service.AvailableVehicleService;
 import service.LoginService;
+import service.VendorVehicleService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,10 +22,15 @@ public class VendorLoginServlet extends HttpServlet {
         String Username = request.getParameter("username");
         String Password = request.getParameter("password");
         String destpage ="Index.jsp";
+        AvailableVehicleVO avo= new AvailableVehicleVO();
         LoginService ls = new LoginService();
         if(ls.VerifyLogin(Username,Password,"VENDOR"))
         {
-            destpage = ".jsp";
+            VendorVehicleService vvs= new VendorVehicleService();
+            avo=vvs.vehicledetails(Username);
+            avo.setUsername(Username);
+            request.setAttribute("avo",avo);
+            destpage = "Vendorhome.jsp";
         }
         else
         {
