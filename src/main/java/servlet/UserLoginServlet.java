@@ -26,6 +26,7 @@ public class UserLoginServlet extends HttpServlet {
         {
             AvailableVehicleService avs= new AvailableVehicleService();
             avo=avs.AvailableVehicle();
+            avo.setUsername(Username);
             request.setAttribute("avo",avo);
             destpage = "AvailableVehicle.jsp";
         }

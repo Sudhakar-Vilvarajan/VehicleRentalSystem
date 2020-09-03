@@ -38,6 +38,7 @@ public class BookNowServlet extends HttpServlet {
             System.out.println(selectedavo.getCarCompany());
         }
         }
+    selectedavo.setUsername((String)request.getServletContext().getAttribute("username"));
     request.setAttribute("savo",selectedavo);
         RequestDispatcher dispatcher =request.getRequestDispatcher("BookVehicle.jsp");
         dispatcher.forward(request,response);

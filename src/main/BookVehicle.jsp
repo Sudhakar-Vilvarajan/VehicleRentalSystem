@@ -18,7 +18,7 @@
 <%AvailableVehicleVO avo;
 avo=(AvailableVehicleVO)request.getAttribute("savo");%>
 <H3>Available Vehicles</H3>
-  <form action="" method="post">
+  <form action="payservlet" method="post">
   <table border="1" style="width:90% ; margin-left:5%;">
 
   <tr>
@@ -44,8 +44,13 @@ avo=(AvailableVehicleVO)request.getAttribute("savo");%>
   </tr>
   <%}%>
 </table>
-<input type="text" value=total>
+Total Amount : <input type="text" value=<%=total%>>
 <input type="submit" value="Pay Amount">
+<%
+pageContext.setAttribute("total", total, PageContext.APPLICATION_SCOPE);
+pageContext.setAttribute("username", avo.getUsername(), PageContext.APPLICATION_SCOPE);
+pageContext.setAttribute("vehnumber", avo.getVehiclenumber(), PageContext.APPLICATION_SCOPE);
+%>
 </form>
 </div>
 </body>

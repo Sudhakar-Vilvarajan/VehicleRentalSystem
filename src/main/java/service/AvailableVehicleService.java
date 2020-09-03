@@ -12,7 +12,7 @@ public class AvailableVehicleService {
     public AvailableVehicleVO AvailableVehicle(){
         AvailableVehicleVO avo = new AvailableVehicleVO();
         AvailableVehicleDAO dao = new AvailableVehicleDAO();
-        StringBuilder Query = new StringBuilder("select * from vehicledetails");
+        StringBuilder Query = new StringBuilder("select * from vehicledetails where BookingId=0");
         avo= dao.runquery(Query.toString());
         return avo;
     }

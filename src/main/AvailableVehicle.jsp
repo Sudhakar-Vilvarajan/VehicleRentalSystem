@@ -18,7 +18,9 @@
 <%AvailableVehicleVO avo;
 avo=(AvailableVehicleVO)request.getAttribute("avo");%>
 <H3>Available Vehicles</H3>
+Welcome <%=avo.getUsername()%>
   <form action="booknowservlet" method="post">
+  <%pageContext.setAttribute("username", avo.getUsername(), PageContext.APPLICATION_SCOPE);%>
   <table border="1" style="width:90% ; margin-left:5%;">
 
   <tr>

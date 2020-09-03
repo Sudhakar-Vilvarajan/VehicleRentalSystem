@@ -13,6 +13,15 @@ public class AvailableVehicleVO {
     public List<Date> Leaseenddate = new ArrayList<>();
     public List<Integer> Leaseamount = new ArrayList<>();
     public List<Integer> Rentamount = new ArrayList<>();
+    public String Username;
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String username) {
+        Username = username;
+    }
 
     public List<Integer> getLeaseamount() {
         return Leaseamount;
