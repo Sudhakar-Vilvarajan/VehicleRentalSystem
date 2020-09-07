@@ -46,6 +46,7 @@ Welcome <%=avo.getUsername()%>!!!
   <%}%>
 </table>
 <input type="submit" value="Book Now">
+<input type="submit" value="Logout" onclick="document.forms[0].action = 'Index.jsp'; return true;">
 </form>
 </div>
 </body>

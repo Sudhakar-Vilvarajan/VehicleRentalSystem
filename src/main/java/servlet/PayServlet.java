@@ -24,7 +24,7 @@ public class PayServlet extends HttpServlet {
     if(bvs.pay(Totalamount,Username,vehnumber))
     {
         request.setAttribute("username",Username);
-        RequestDispatcher dispatcher =request.getRequestDispatcher("success.jsp");
+        RequestDispatcher dispatcher =request.getRequestDispatcher("Success.jsp");
         dispatcher.forward(request,response);
     }
     else

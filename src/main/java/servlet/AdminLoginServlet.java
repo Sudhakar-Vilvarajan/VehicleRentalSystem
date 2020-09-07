@@ -23,7 +23,7 @@ public class AdminLoginServlet extends HttpServlet {
         LoginService ls = new LoginService();
         if(ls.VerifyLogin(Username,Password,"ADMIN"))
         {
-            destpage = ".jsp";
+            destpage = "Adminhome.jsp";
         }
         else
         {

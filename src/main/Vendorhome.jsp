@@ -51,8 +51,9 @@ Welcome <%=avo.getUsername()%>!!!
   </tr>
   <%}%>
 </table>
-<input type="submit" value="Add New">
+<input type="submit" value="Add New" onclick="document.forms[0].action = 'AddNewVehicle.jsp'; return true;" >
 <input type="submit" value="Delete" onclick="form.action='DeleteVehicleServlet';">
+<input type="submit" value="Logout" onclick="document.forms[0].action = 'Index.jsp'; return true;">
 </form>
 <%pageContext.setAttribute("username", avo.getUsername(), PageContext.APPLICATION_SCOPE);%>
 </div>
